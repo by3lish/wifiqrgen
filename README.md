@@ -8,12 +8,12 @@ WiFiQRGen is a lightweight and efficient CLI tool that fetches your saved Wi-Fi 
 ---
 
 ## 🔥 Features
-
+```
 ✅ Lists saved Wi-Fi networks (supports `nmcli`)
 ✅ Fetches Wi-Fi passwords securely
 ✅ Generates QR codes directly in the terminal
 ✅ Works on Linux distributions using NetworkManager
-
+```
 ---
 
 ## 🚀 Installation
