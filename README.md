@@ -128,7 +128,6 @@ You can also use the following options:
   systemctl status NetworkManager  
   ```
 - Another possibility is that the network is **open (passwordless)**. In this case, no password retrieval is needed, and therefore no QR code will be generated.
-**
 
 ---
 
