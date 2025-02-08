@@ -117,7 +117,7 @@ You can also use the following options:
 
 - Ensure `nmcli` is installed and running (`nmcli connection show`).
 
-**2. Password not retrieved?
+**2. Password not retrieved?**
 
 - You might not have permission to access network passwords. Try running:
   ```bash
