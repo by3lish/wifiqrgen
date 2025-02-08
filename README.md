@@ -130,15 +130,6 @@ You can also use the following options:
 - Another possibility is that the network is **open (passwordless)**. In this case, no password retrieval is needed, and therefore no QR code will be generated.
 **
 
-- You might not have permission to access network passwords. Try running:
-  ```bash
-  sudo wifiqrgen  
-  ```
-- If `nmcli` is not working, check if NetworkManager is enabled:
-  ```bash
-  systemctl status NetworkManager  
-  ```
-
 ---
 
 ## 🤝 Contributing
