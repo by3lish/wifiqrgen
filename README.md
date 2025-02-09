@@ -117,7 +117,7 @@ You can also use the following options:
 
 - Ensure `nmcli` is installed and running (`nmcli connection show`).
 
-**2. Password not retrieved?
+**2. Password not retrieved?**
 
 - You might not have permission to access network passwords. Try running:
   ```bash
@@ -128,16 +128,6 @@ You can also use the following options:
   systemctl status NetworkManager  
   ```
 - Another possibility is that the network is **open (passwordless)**. In this case, no password retrieval is needed, and therefore no QR code will be generated.
-**
-
-- You might not have permission to access network passwords. Try running:
-  ```bash
-  sudo wifiqrgen  
-  ```
-- If `nmcli` is not working, check if NetworkManager is enabled:
-  ```bash
-  systemctl status NetworkManager  
-  ```
 
 ---
 
