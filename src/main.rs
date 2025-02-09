@@ -1,8 +1,8 @@
-use std::process::Command;
-use std::io::{self, Write};
-use std::env;
-use qrcode::QrCode;
 use qrcode::render::unicode::Dense1x2;
+use qrcode::QrCode;
+use std::env;
+use std::io::{self, Write};
+use std::process::Command;
 const BLUE: &str = "\x1b[34m";
 const GREEN: &str = "\x1b[32m";
 const RED: &str = "\x1b[31m";
@@ -47,16 +47,17 @@ fn get_wifi_password(ssid: &str) -> Option<String> {
 fn generate_qr_code(ssid: &str, password: &str) {
     let qr_data = format!("WIFI:S:{};T:WPA;P:{};;", ssid, password);
     let code = QrCode::new(qr_data).unwrap();
-    let image = code.render::<Dense1x2>()
+    let image = code
+        .render::<Dense1x2>()
         .dark_color(Dense1x2::Light)
         .light_color(Dense1x2::Dark)
-        .build();   
+        .build();
     println!("{}", GREEN);
     println!("{}", image);
     println!("{}", RESET);
 }
 fn select_wifi(ssids: &[String]) -> Option<String> {
-    println!("{}Available Wi-Fi Networks:{}\n", BLUE, RESET);   
+    println!("{}Available Wi-Fi Networks:{}\n", BLUE, RESET);
     for (i, ssid) in ssids.iter().enumerate() {
         println!("{}{}. {}{}", GREEN, i + 1, ssid, RESET);
     }
@@ -103,7 +104,10 @@ fn main() {
                 if let Some(pw) = password {
                     generate_qr_code(ssid, &pw);
                 } else {
-                    println!("{}Failed to retrieve password for `{}`.{}", RED, ssid, RESET);
+                    println!(
+                        "{}Failed to retrieve password for `{}`.{}",
+                        RED, ssid, RESET
+                    );
                 }
                 return;
             }
@@ -118,7 +122,10 @@ fn main() {
         if let Some(password) = get_wifi_password(&ssid) {
             generate_qr_code(&ssid, &password);
         } else {
-            println!("{}Failed to retrieve password for `{}`.{}", RED, ssid, RESET);
+            println!(
+                "{}Failed to retrieve password for `{}`.{}",
+                RED, ssid, RESET
+            );
         }
     }
 }
